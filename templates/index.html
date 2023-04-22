@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Sentiment analysis</title>
+  </head>
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+      background-image: url("https://media.istockphoto.com/id/1294603953/vector/abstract-black-stripes-diagonal-background.jpg?s=612x612&w=0&k=20&c=nQZHTk-o97cNVqWnUe8BJg0A5jQG0tqylquzbt9YtcQ=");
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 35px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: rgb(204 107 64);
+      border: 2px solid #dd6767;
+      border-radius: 5px;
+      height: 60px;
+      width: 617px;
+      margin-left: 60px;
+      background-color: #a6c2da;
+    }
+
+    .container {
+      width: 700px;
+      height: 550px;
+      border: 2px solid rgb(49, 48, 48);
+      background-color: rgb(47, 47, 50);
+      border-radius: 28px;
+      margin-top: 15px;
+        margin-left: 350px;
+      padding: 10px;
+    }
+
+    
+    .text {
+      height: 18px;
+      width: 500px;
+      border: 2px solid #d87373;
+      border-radius: 15px;
+      display: flex;
+      padding: 8px;
+      margin-left: 100px;
+      margin-top: 20px;
+    }
+
+    .button {
+      height: 40px;
+      width: 120px;
+      margin-left: 40%;
+      margin-bottom: 25px;
+      border: none;
+      border-radius: 10%;
+      background-color: rgb(84, 44, 44);
+      color: antiquewhite;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .button:hover {
+      background-color: rgb(200, 198, 94);
+      color: rgb(67, 46, 49);
+    }
+
+    b{
+      color: white;
+      /* padding-left: 155px; */
+      border: 2px solid #d87373;
+      margin-left: 180px;
+      font-size: 25px;
+      background-color: #a6c2da;
+      color: #d87373;
+      border-radius: 10px;
+      padding: 10px;
+      margin-top: -25px;
+      
+      /* margin: 10px; */
+      /* margin-top: -80px; */
+    }
+    h2{
+        margin-left: 100px;
+        color: white;
+        margin-top: 25px;
+    }
+    .text-file{
+        font-size: 25px;
+        border: 2px solid #d87373;
+      border-radius: 15px;
+      display: flex;
+      padding: 15px;
+      padding: 8px;
+      margin-left: 120px;
+      margin-top: 20px;
+      background-color: #a6c2da;
+    }
+  </style>
+  <body >
+    <div class="back">
+
+    </div>
+    <div>
+      <form class="container" action="{{url_for('predict')}}" method="post">
+        <h1 class="header">
+          Sentiment analysis of tweets
+        </h1>
+        <h2>Enter the Hashtag :</h2>
+        <input class="text" type="text" name="hashtag" />
+        <br />
+        <h2>Enter the number of tweets :</h2>
+        <input class="text" type="text" name="tweets" />
+        <br />
+        <h2>Enter since when to fetch (Format: YYYY-MM-DD):</h2>
+        <input class="text" type="text" name="date" />
+        <br />
+        <br />
+
+        <button class="button" type="submit">Predict</button>
+      </form>
+    </div>
+  </body>
+</html>
